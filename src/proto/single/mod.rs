@@ -112,6 +112,7 @@ pub struct Job {
     ///
     /// Defaults to 600 seconds.
     #[serde(
+        default,
         skip_serializing_if = "Option::is_none",
         serialize_with = "utils::ser_optional_duration_in_seconds",
         deserialize_with = "utils::deser_as_optional_duration_in_seconds"
